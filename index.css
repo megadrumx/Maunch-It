@@ -1,0 +1,342 @@
+:root {
+    --gap: 8px;
+    --header: "Anton", sans-serif;
+    --body: 'Arial', Helvetica, sans-serif;
+    --headercolor: #042f1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    padding-top: 10px;
+    height: 100vh;
+    background-color: #042f1a;
+}
+
+/* navbar */
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: var(--header) ;
+    font-weight: 200;
+    font-style: normal;
+}
+.navbar ul li {
+    list-style-type: none;
+    margin: 0px;
+}
+.navbar {
+    position: relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+.navbar ul button {
+    background-color: #ff73b5;
+    border: none;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.navbar ul button a {
+    text-decoration: none;
+    color: #0a3f3d;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: var(--header);
+    font-weight: 300;
+    font-style: normal;
+    display: inline-block;
+    position: relative;
+}
+.navbar ul button:hover a {
+    animation: scrollText 1.5s linear infinite ;
+}
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.munch {
+    font-size: 80px;
+    font-family: "Matemasie", sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* background image and text */
+.page1 {
+    text-align: center;
+    height: auto;
+    max-height: 100%;
+}
+.page1 .h1top {
+    color: #d8d8d8;
+    font-family: "Alfa Slab One", sans-serif;
+    font-size: 210px;
+    letter-spacing: 2mm;
+    text-transform: uppercase;
+    margin-bottom: -25px;font-weight: bolder;
+}
+.page1 .h1bottom {
+    color: #d8d8d8;
+    font-family: "Alfa Slab One", sans-serif;
+    font-size: 210px;
+    letter-spacing: 2mm;
+    text-transform: uppercase;
+}
+.page1 img {
+    width: 400px;
+    margin-top: -95px;
+    margin-bottom: -170px;
+}
+
+/* scrolling text */
+.info-bar {
+    background-color: #ff73b5; /* Pink background color */
+    padding: 10px 0;
+    position: fixed; /* Fixes the bar at the bottom */
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    overflow: hidden; /* Hides overflow to create the scrolling effect */
+    white-space: nowrap; /* Prevents line breaks */
+    
+    gap: var(--gap);
+}
+.scrolling-text {
+    display: inline-block;
+    animation: scroll-left 20s linear infinite; /* Scrolls from right to left */
+    gap: var(--gap);
+}
+.info-bar span {
+    font-family: "Alfa Slab One", sans-serif;
+    font-size: 20px;
+    color: #053736;
+    display: inline-flex;
+    align-items: center; /* Space between each text segment */
+}
+.info-bar  span::after {
+    content: '';
+    margin: 0    15px;
+    font-size: 30px;
+    color: black;
+}
+@keyframes scroll-left {    
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+/* CURIOUS */
+.curious {
+    height: 100vh;
+    align-content: center;
+    background-color: #ff73b5;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.curious .text {
+    align-content: center;
+    margin-right: 150px;
+    margin-bottom: 100px;
+}
+.curious .text h1 {
+    text-transform: uppercase;
+    font-family: var(--header);
+    font-size: 100px;
+    color: var(--headercolor);
+    margin-bottom: 40px;
+    letter-spacing: 1mm;
+    line-height: 2.7cm;
+}
+.curious .text h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+    color: var(--headercolor);
+    letter-spacing: 1mm;
+}
+.curious img {
+    width: 700px;
+    /* margin-left: 40px; */
+}
+
+/* INSPIRED */
+.inspire {
+    height: 100vh;
+    align-content: center;
+    background-color: #ffffff;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.inspire .text {
+    align-content: center;
+    margin-left: 150px;
+    margin-bottom: 100px;
+}
+.inspire .text h1 {
+    text-transform: uppercase;
+    font-family: var(--header);
+    font-size: 100px;
+    color: var(--headercolor);
+    margin-bottom: 40px;
+    letter-spacing: 1mm;
+    line-height: 2.7cm;
+}
+.inspire .text h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+    color: var(--headercolor);
+    letter-spacing: 1mm;
+}
+.inspire img {
+    width: 700px;
+    /* margin-left: 40px; */
+}
+
+/* POWERED */
+.powered {
+    height: 100vh;
+    align-content: center;
+    background-color: #d4ed6d;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.powered .text {
+    align-content: center;
+    margin-right: 150px;
+    margin-bottom: 100px;
+}
+.powered .text h1 {
+    text-transform: uppercase;
+    font-family: var(--header);
+    font-size: 100px;
+    color: var(--headercolor);
+    margin-bottom: 40px;
+    letter-spacing: 1mm;
+    line-height: 2.7cm;
+}
+.powered .text h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+    color: var(--headercolor);
+    letter-spacing: 1mm;
+}
+.powered img {
+    width: 700px;
+    /* margin-left: 40px; */
+}
+
+/* FLAVOURSOME */
+.flavoursome {
+    height: 100vh;
+    align-content: center;
+    background-color: #042f1a;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.flavoursome .text {
+    align-content: center;
+    margin-left: 150px;
+    margin-bottom: 100px;
+}
+.flavoursome .text h1 {
+    text-transform: uppercase;
+    font-family: var(--header);
+    font-size: 100px;
+    color: #d8d8d8;
+    margin-bottom: 40px;
+    letter-spacing: 1mm;
+    line-height: 2.7cm;
+}
+.flavoursome .text h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+    color: #d8d8d8;
+    letter-spacing: 1mm;
+}
+.flavoursome img {
+    width: 700px;
+    /* margin-left: 40px; */
+}
+
+/* FEATURES & BENEFITS */
+.benefits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff6f6;
+    height: 100vh;
+}
+.benefits h1 {
+    text-transform: uppercase;
+    font-family: var(--header);
+    font-size: 50px;
+    line-height: 1;
+    letter-spacing: 5;
+    margin-bottom: 110px;
+    justify-content: center;
+    /* text-rendering: optimizeLegibility; */
+}
+.benefits .container {
+    display: flex;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0;
+
+}
+.benefits .inner_container {
+    margin: 0 18px 35px 18px;
+    padding-bottom: 60px;
+}
+.benefits .inner_container img {
+    align-items: center;
+    margin-bottom: 140px;
+}
+.benefits .inner_container h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.benefits .inner_container h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.3mm;
+    color: var(--header);
+}
