@@ -10,36 +10,46 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 header {
     padding-top: 10px;
     height: 100vh;
     background-color: #042f1a;
 }
 
-/* navbar */
-.navbar ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-family: var(--header) ;
-    font-weight: 200;
-    font-style: normal;
-}
-.navbar ul li {
-    list-style-type: none;
-    margin: 0px;
-}
+/* Default navbar styles */
 .navbar {
     position: relative;
-}
+    }
+
+    /* Ensure ul spans full width and spaces items evenly */
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: var(--header);
+    font-weight: 200;
+    }
+
+    /* Individual nav items */
+.navbar ul li {
+    list-style-type: none;
+    margin: 0 10px;
+    }
+
+    /* Nav links */
 .navbar ul li a {
     text-decoration: none;
     color: white;
     padding: 10px 20px;
     display: block;
-}
+    }
+
+    /* Contact button */
 .navbar ul button {
     background-color: #ff73b5;
     border: none;
@@ -49,9 +59,10 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    overflow: hidden;
     white-space: nowrap;
-}
+    }
+
+    /* Contact button text */
 .navbar ul button a {
     text-decoration: none;
     color: #0a3f3d;
@@ -59,13 +70,14 @@ header {
     text-transform: uppercase;
     font-family: var(--header);
     font-weight: 300;
-    font-style: normal;
     display: inline-block;
-    position: relative;
-}
+    }
+
+    /* Button animation */
 .navbar ul button:hover a {
-    animation: scrollText 1.5s linear infinite ;
-}
+    animation: scrollText 1.5s linear infinite;
+    }
+
 @keyframes scrollText {
     0% {
         transform: translateX(100%);
@@ -77,14 +89,59 @@ header {
         transform: translateX(-100%);
     }
 }
+
+/* Munch brand style */
 .munch {
     font-size: 80px;
     font-family: "Matemasie", sans-serif;
+    }
+
+.menu-toggle {
+  display: none; /* Hides hamburger by default on all screen sizes */
 }
 
-@media only screen and (max-width: 600px) {
-    
+
+/* Show toggle on mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: white;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    /* Optional: stack nav items on mobile */
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 60px 20px 20px 20px;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 60px 20px 20px 20px;
+    width: 100%;
+    }
+
+    .nav-links.show {
+    display: flex;
+    }
 }
+
 
 /* background image and text */
 .page1 {
