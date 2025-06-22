@@ -17,40 +17,74 @@ header {
     background-color: #042f1a;
 }
 
-/* Default navbar styles */
 .navbar {
+    width: 100%;
+    padding: 20px;
     position: relative;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
     }
 
-    /* Ensure ul spans full width and spaces items evenly */
-.navbar ul {
+.menu-toggle {
+    background-color: #ff73b5;
+    color: #0a3f3d;
+    font-size: 25px;
+    font-family: var(--header);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    cursor: pointer;
+    }
+
+    /* Brand logo style */
+.munch {
+    font-size: 80px;
+    font-family: "Matemasie", sans-serif;
+    color: white;
+    text-decoration: none;
+    }
+
+    /* Navigation links (Desktop) */
+.nav-links {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    padding: 0 30px;
+    margin-top: 20px;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 40px;
     font-family: var(--header);
     font-weight: 200;
+    padding: 0;
     }
 
-    /* Individual nav items */
-.navbar ul li {
-    list-style-type: none;
-    margin: 0 10px;
+.nav-links li {
+    list-style: none;
     }
 
-    /* Nav links */
-.navbar ul li a {
-    text-decoration: none;
+.nav-links a {
     color: white;
+    text-decoration: none;
     padding: 10px 20px;
-    display: block;
+    transition: all 0.3s ease;
     }
 
-    /* Contact button */
-.navbar ul button {
+.nav-links a:hover {
+    color: #ff73b5;
+    transform: scale(1.1);
+    }
+
+    /* Button */
+.nav-links button {
     background-color: #ff73b5;
     border: none;
     border-radius: 10px;
@@ -62,86 +96,147 @@ header {
     white-space: nowrap;
     }
 
-    /* Contact button text */
-.navbar ul button a {
-    text-decoration: none;
+.nav-links button a {
     color: #0a3f3d;
-    font-size: 25px;
+    font-size: 40px;
     text-transform: uppercase;
     font-family: var(--header);
-    font-weight: 300;
+    }
+
+    /* CONTACT US scrolling effect */
+.scroll-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    }
+
+.scroll-container a {
     display: inline-block;
+    white-space: nowrap;
+    animation: none;
+    transform: translateX(0);
     }
 
-    /* Button animation */
-.navbar ul button:hover a {
-    animation: scrollText 1.5s linear infinite;
+.scroll-container:hover a {
+    animation: scrollLeft 3s linear infinite;
     }
 
-@keyframes scrollText {
+@keyframes scrollLeft {
     0% {
         transform: translateX(100%);
-    }
-    50% {
-        transform: translateX(0); 
     }
     100% {
         transform: translateX(-100%);
     }
 }
 
-/* Munch brand style */
-.munch {
-    font-size: 80px;
-    font-family: "Matemasie", sans-serif;
+@keyframes pulse {
+    0% {
+        transform: scale(1);
     }
-
-.menu-toggle {
-  display: none; /* Hides hamburger by default on all screen sizes */
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
-
-/* Show toggle on mobile */
+/* Mobile View */
 @media (max-width: 768px) {
+    header {
+        height: 100vh;
+    }
+    .munch{
+        margin-right: 5rem;
+        margin-top: -15px;
+    }
     .menu-toggle {
         display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 30px;
-        background: none;
-        border: none;
-        color: white;
-        z-index: 999;
-        cursor: pointer;
+        margin-top: 10px;
     }
 
-    /* Optional: stack nav items on mobile */
-    .navbar ul {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 60px 20px 20px 20px;
+    .menu-toggle {
+        display: flex;
+        animation: pulse 1.5s infinite ease-in-out;
+        transition: transform 0.3s ease;
     }
-
-    .navbar ul li {
-        width: 100%;
+    
+    .menu-toggle:hover {
+        transform: scale(1.15);
     }
 
     .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 60px 20px 20px 20px;
-    width: 100%;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #042f1a;
+        z-index: 998;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: all 0.4s ease;
+        }
+    
+    .nav-links.show {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
-    .nav-links.show {
-    display: flex;
+    .nav-links li {
+        list-style: none;
+        }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding:10px 20px;
+        transition: all 0.3s ease;
+        }
+    
+    .nav-links a:hover {
+        color: #ff73b5;
+        transform: scale(1.1);
+        }
+
+    .scroll-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    }
+
+.scroll-container a {
+    display: inline-block;
+    white-space: nowrap;
+    animation: none;
+    transform: translateX(0);
+    }
+
+.scroll-container:hover a {
+    animation: scrollLeft 3s linear infinite;
+    }
+
+    .nav-links li button a {
+        font-size: 25px;
+    }
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
-
+}
 
 /* background image and text */
 .page1 {
@@ -170,22 +265,44 @@ header {
     margin-bottom: -170px;
 }
 
+@media (max-width: 768px) {
+    .page1 {
+        margin-top: 170px;
+    }
+    .page1 .h1top {
+        font-size: 40px;
+        margin-bottom: 37px;
+        margin-top: 25px;
+    }
+
+    .page1 .h1bottom {
+        font-size: 40px;
+        margin-bottom: 37px;
+        margin-top: 25px;
+    }
+
+    .page1 img {
+        width: 150px;
+        margin-top: -60px;
+        margin-bottom: -55px;
+    }
+}
+
 /* scrolling text */
 .info-bar {
     background-color: #ff73b5; /* Pink background color */
     padding: 10px 0;
-    position: fixed; /* Fixes the bar at the bottom */
+    position: fixed;
     bottom: 0;
     height: 60px;
     width: 100%;
-    overflow: hidden; /* Hides overflow to create the scrolling effect */
-    white-space: nowrap; /* Prevents line breaks */
-    
+    overflow: hidden;
+    white-space: nowrap;
     gap: var(--gap);
 }
 .scrolling-text {
     display: inline-block;
-    animation: scroll-left 20s linear infinite; /* Scrolls from right to left */
+    animation: scroll-left 20s linear infinite;
     gap: var(--gap);
 }
 .info-bar span {
@@ -196,8 +313,7 @@ header {
     align-items: center; /* Space between each text segment */
 }
 .info-bar  span::after {
-    content: '';
-    margin: 0    15px;
+    margin: 0 15px;
     font-size: 30px;
     color: black;
 }
@@ -206,7 +322,54 @@ header {
         transform: translateX(calc(-100% - var(--gap)));
     }
 }
+.separator {
+    margin: 0 20px;
+    color: #042f1a;
+    font-size: 18px;
+}
 
+/* Badge */
+.badge {
+    position: fixed;
+    bottom: 100px; /* Moved up from 80px */
+    left: 20px;
+    z-index: 998;
+    color: white;
+    font-family: var(--header);
+    font-size: 14px;
+}
+
+.badge-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.badge-icon {
+    font-size: 45px;
+    transition: transform 0.2s ease-out;
+    color: white;
+}
+
+  /* Improved text readability */
+.badge-text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4); /* semi-transparent dark background */
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 500;
+    max-width: 140px;
+}
+
+@media (max-width: 768px) {
+    .badge {
+        display: none;
+    }
+}
 /* CURIOUS */
 .curious {
     height: 100vh;

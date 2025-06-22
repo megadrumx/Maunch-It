@@ -1,13 +1,13 @@
-// function toggleNav() {
-//     const nav = document.getElementById('nav-menu');
-//         nav.classList.toggle('active');
-//     }
+const toggleBtn = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-
-const toggleBtn = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-toggleBtn.addEventListener('click', () => {
-navLinks.classList.toggle('show');
+toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+    toggleBtn.textContent = navLinks.classList.contains("show") ? "✖" : "☰";
 });
 
+const badgeIcon = document.querySelector('.badge-icon');
+window.addEventListener('scroll', () => {
+const rotation = window.scrollY % 360;
+badgeIcon.style.transform = `rotate(${rotation}deg)`;
+  });
