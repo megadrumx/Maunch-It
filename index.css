@@ -298,7 +298,7 @@ header {
   
     .page1 .h1top,
     .page1 .h1bottom {
-      font-size: 130px;  /* Reduce from 210px */
+      font-size: 30px;
       margin: 10px 0;
       letter-spacing: 1.5mm;
       line-height: 1.2;
