@@ -150,6 +150,7 @@ header {
     .munch{
         margin-right: 5rem;
         margin-top: -15px;
+        font-size: 30px;
     }
     .menu-toggle {
         display: block;
@@ -267,30 +268,6 @@ header {
     margin-bottom: -170px;
 }
 
-/* Small screens */
-@media (max-width: 768px) {
-    .page1 {
-        margin-top: 170px;
-    }
-    .page1 .h1top {
-        font-size: 40px;
-        margin-bottom: 37px;
-        margin-top: 25px;
-    }
-
-    .page1 .h1bottom {
-        font-size: 40px;
-        margin-bottom: 37px;
-        margin-top: 25px;
-    }
-
-    .page1 img {
-        width: 150px;
-        margin-top: -60px;
-        margin-bottom: -55px;
-    }
-}
-
 /* Medium screens */
 @media (max-width: 991px) {
     .page1 {
@@ -328,11 +305,35 @@ header {
     }
   
     .page1 img {
-      width: 280px;
+      width: auto;
       margin-top: -50px;
       margin-bottom: -90px;
     }
   }
+
+/* Small screens */
+@media (max-width: 768px) {
+    .page1 {
+        margin-top: 170px;
+    }
+    .page1 .h1top {
+        font-size: 30px;
+        margin-bottom: 37px;
+        margin-top: 25px;
+    }
+
+    .page1 .h1bottom {
+        font-size: 30px;
+        margin-bottom: 37px;
+        margin-top: 25px;
+    }
+
+    .page1 img {
+        width: 220px;
+        margin-top: -60px;
+        margin-bottom: -55px;
+    }
+}
   
 
 /* scrolling text */
